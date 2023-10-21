@@ -1,0 +1,22 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<body class="container mt-4">
+    <h1 class="mb-4">Thank You for Your Order!</h1>
+    <h2>Order Details</h2>
+    <ul>
+        {% for item in basket_items %}
+            <li>{{ item['name'] }} - ${{ item['price'] }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total Price: ${{ total_price }}</p>
+    <p>Your order has been successfully processed.</p>
+    <a href="/" class="btn btn-primary">Go Home</a>
+</body>
+<style>
+    body {
+        background: linear-gradient(#526374, #000000);
+    }
+    .container {
+        color: white;
+    }
+</style>
+

@@ -1,0 +1,8 @@
+.row {
+    color: white;
+}
+
+.card {
+    margin-top: 15px;
+    object-fit: cover;
+}

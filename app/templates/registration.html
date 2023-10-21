@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link href="/static/styles/registration.css" rel="stylesheet">
+<div class="registration-container">
+    <form method="post" enctype="multipart/form-data" class="registration-form">
+        {{ form.hidden_tag() }}
+        <h2 class="form-title">Registration</h2>
+        <div class="form-group">
+            <label class="form-label">{{ form.name.label }}</label>
+            {{ form.name(size=32, class="form-input") }}
+        </div>
+        <div class="form-group">
+            <label class="form-label">{{ form.email.label }}</label>
+            {{ form.email(size=32, class="form-input") }}
+        </div>
+        <div class="form-group">
+            <label class="form-label">{{ form.password.label }}</label>
+            {{ form.password(size=32, class="form-input") }}
+        </div>
+        <div class="form-group">
+            <label class="form-label">{{ form.repeat_password.label }}</label>
+            {{ form.repeat_password(size=32, class="form-input") }}
+        </div>
+        <div class="form-group">
+            <label for="image" class="form-label">Choose your photo</label>
+            <input type="file" name="image" id="image" class="form-input form-file-input">
+        </div>
+        <button type="submit" class="register-btn">{{ form.submit }}</button>
+        <p class="form-note">Already have an account? <a href="login">Sign in</a>.</p>
+    </form>
+</div>
+
+
+{% endblock %}

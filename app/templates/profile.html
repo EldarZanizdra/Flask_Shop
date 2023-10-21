@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link href="/static/styles/profile.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1>{{ user.name }}</h1>
+            <img src="{{ user.photo }}" class="profile-image" alt="{{ user.name }}">
+            <div class="profile-links mt-3">
+                <a href="/profile_settings" class="btn btn-primary mr-2">Settings</a>
+                <a href="/logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

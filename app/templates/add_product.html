@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link href="/static/styles/add_product.css" rel="stylesheet">
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card bg-transparent">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Add Product</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+                            <label for="name">{{ form.name.label }}</label>
+                            {{ form.name(size=30, class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            <label for="price">{{ form.price.label }}</label>
+                            {{ form.price(size=30, class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Upload an Image</label>
+                            <input type="file" name="image" class="form-control-file">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

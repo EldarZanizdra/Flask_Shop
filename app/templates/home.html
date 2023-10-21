@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="/static/styles/home.css" rel="stylesheet">
+
+<div class="jumbotron slideshow-container">
+    <h1 class="display-5">Latest News</h1>
+    <p class="lead">Stay updated with the latest news and updates.</p>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-2 mb-1">
+                <div class="card">
+                    <a href="/products/{{product.id}}">
+                        <img src="{{ product.photo }}" class="card-img-top" alt="{{ product.name }}">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="/products/{{product.id}}">{{ product.name }}</a></h5>
+                        <form method="post" action="/buy/{{ product.id }}">
+                            <button type="submit" class="btn btn-primary">Add to Basket</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+

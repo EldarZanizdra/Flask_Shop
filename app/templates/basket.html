@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link href="/static/styles/basket.css" rel="stylesheet">
+<div class="container mt-4">
+    <h1 class="mb-4">Basket</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in basket %}
+                <tr>
+                    <td>{{ item['name'] }}</td>
+                    <td>{{ item['price'] }} $</td>
+                    <td>
+                        <form method="post" action="/remove_from_basket/{{ item.id }}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Total price: {{ total_price }} $</p>
+    <form method="POST" action="/checkout">
+        <button type="submit" class="btn btn-success">Checkout</button>
+    </form>
+    <a href="/" class="btn btn-primary">Continue Shopping</a>
+</div>
+{% endblock %}
+
+
+

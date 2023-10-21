@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link href="/static/styles/login.css" rel="stylesheet">
+<div class="container">
+    <form method="post" class="login-form">
+        {{ form.hidden_tag() }}
+        <h2 class="form-title">Sign In</h2>
+        <div class="form-group">
+            <label for="email" class="form-label">Email:</label>
+            {{ form.email(size=32, class="form-input") }}
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password:</label>
+            {{ form.password(size=32, class="form-input") }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="login-btn") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
+

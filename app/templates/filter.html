@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<link href="/static/styles/filter.css" rel="stylesheet">
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>Filter Products</h1>
+            <form method="post" class="filter-form">
+                <div class="form-group">
+                    <label for="low_price">Minimum price:</label>
+                    <input type="number" name="low_price" step="0.01" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="high_price">Maximum price:</label>
+                    <input type="number" name="high_price" step="0.01" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </form>
+            <div class="container-fluid">
+                <div class="row">
+                {% for product in products %}
+                <div class="col-md-5 mb-3">
+                    <div class="card">
+                        <img src="{{ product.photo }}" class="card-img-top img-thumbnail" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/products/{{product.id}}">{{ product.name }}</a></h5>
+                            <form method="post" action="/buy/{{ product.id }}">
+                                <button type="submit" class="btn btn-primary">Add to Basket</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

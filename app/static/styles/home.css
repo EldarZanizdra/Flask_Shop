@@ -1,0 +1,56 @@
+.container-fluid{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.card-img-top {
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.jumbotron {
+    background-image: url("https://fanboysmarketplace.com/wp-content/uploads/2022/08/funkocollection1.jpeg");
+    height: 500px;
+    margin-top: 20px;
+    margin-left: 13px;
+}
+
+.slideshow-container {
+    color: white;
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.jumbotron {
+    animation: background-slideshow 20s infinite;
+}
+
+@keyframes background-slideshow {
+    0% {
+        background: url(https://i.pinimg.com/originals/37/30/bc/3730bc00a1f8817911cbbebfcbfb24a4.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+    25% {
+        background: url(https://i.ytimg.com/vi/wF-Rnz0vHes/maxresdefault.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+    50% {
+        background: url(https://images2.minutemediacdn.com/image/fetch/https%3A%2F%2Fredshirtsalwaysdie.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2017%2F07%2F1156213438.jpeg) no-repeat center center fixed;
+        background-size: cover;
+    }
+    75% {
+        background: url(https://pbs.twimg.com/media/FuLnKWWXoAAmb51.jpg:large) no-repeat center center fixed;
+        background-size: cover;
+    }
+    100% {
+        background: url(https://i.pinimg.com/originals/37/30/bc/3730bc00a1f8817911cbbebfcbfb24a4.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
+.card {
+    margin-top: 20px;
+    margin-right: 10px;
+}

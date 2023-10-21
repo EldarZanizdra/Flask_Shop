@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link href="/static/styles/checkout.css" rel="stylesheet">
+<div class="container mt-4">
+    <h1>Checkout</h1>
+    <h2>Order Summary</h2>
+    <ul class="list-group">
+        {% for item in basket_items %}
+            <li class="list-group-item">{{ item['name'] }} - ${{ item['price'] }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total Price: ${{ total_price }}</p>
+    <form method="POST" action="/thank_you">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Card Number" name="card_number">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Expiration Date" name="expiration_date">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="CVV" name="cvv">
+        </div>
+        <button type="submit" class="btn btn-primary">Pay Now</button>
+    </form>
+</div>
+{% endblock %}
+
+
