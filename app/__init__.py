@@ -173,9 +173,9 @@ def delete_product(product_id):
 
 
 @app.route('/products/<int:id>')
-def products_page(user_id):
-    products = Products.query.get(user_id)
-    return render_template('products.html', id=user_id, name=products.name, photo=products.photo,
+def products_page(id):
+    products = Products.query.get(id)
+    return render_template('products.html', id=id, name=products.name, photo=products.photo,
                            price=products.price)
 
 
