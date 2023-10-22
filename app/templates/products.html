@@ -10,7 +10,6 @@
         </div>
         <div class="col-md-6 product-details">
             <h1 class="display-4">{{ name }}</h1>
-            <p class="lead">Category: {{ category }}</p>
             <p class="lead">Price: ${{ price }}</p>
             {% if current_user.is_authenticated and (current_user.role == 'admin' or (current_user.role != 'user' and current_user.id == id)) %}
                 <form method="post" action="/delete_product/{{ id }}">

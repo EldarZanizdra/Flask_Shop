@@ -186,7 +186,7 @@ def search():
         results = Products.query.filter(Products.name.ilike(f'%{data}%')).all()
         return render_template('home.html', products=results)
     else:
-        return render_template('search.html')
+        return render_template('home.html')
 
 
 @app.route('/filter', methods=['GET', 'POST'])
@@ -255,3 +255,8 @@ def thank_you():
         total_price = sum(item['price'] for item in basket_items)
         session.pop('basket')
     return render_template('thank_you.html', basket_items=basket_items, total_price=total_price)
+
+
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html')
