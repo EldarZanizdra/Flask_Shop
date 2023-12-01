@@ -26,7 +26,7 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String, nullable=False, unique=True)
     photo = db.Column(db.String, nullable=False, default='/static/images/images.jpg')
     password = db.Column(db.String, nullable=False, unique=True)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow())
     role = db.Column(db.String, nullable=False, default='user')
 
     def generate_cache(self, password):
